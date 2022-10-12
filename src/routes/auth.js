@@ -13,14 +13,24 @@ const { response } = require("express");
 
 /**
  * @swagger
- * /:
+ * /register:
  *  post:
- *      sumary:This api is used to check register is working or not
- *      description:    This api is used to check register is working or not
+ *      summary: used to register to MOngodb
+ *      description:This api is used to register to  MOngodb
+ *      requestBody:
+ *          required:true
+ *          content:
+ *             application/json:
+ *                  schema:
+ *                     type:array
+ *                     items:
+ *                        $ref:'#components/schema/shop'
  *      responses:
  *          200:
- *              description: To test
+ *              description: Added successfully
  */
+
+
 router.post("/register", async (req, res) => {
     try{
       
@@ -65,9 +75,6 @@ router.post('/login', async(req, res,next) => {
         process.env.JWT_SEC,
             {expiresIn:"3d"}
         ); 
-        // res.send({accessToken})
-
-    // res.send("logged in successfully")
 
     const { password, ...others } = user._doc;  
     res.status(200).json({...others, accessToken});

@@ -46,7 +46,7 @@ router.delete("/:id", verifyToken, async (req, res) => {
  * @swagger
  * /find/{id}:
  *  get:
- *      sumary: To get info from MOngodb
+ *      summary: To get info from MOngodb
  *      description:This api is used to fetch data from MOngodb
  *      parameters:
  *          - in:path
@@ -79,11 +79,11 @@ router.delete("/:id", verifyToken, async (req, res) => {
 
   //-----------------------GET ALL USER------------------------
     
-  /**
+/**
  * @swagger
  * /:
  *  get:
- *      sumary: This api is used to check get method is working or not
+ *      summary: This api is used to check get method is working or not
  *      description: This api is used to check get method is working or not
  *      responses:
  *          200:
