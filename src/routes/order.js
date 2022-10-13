@@ -40,6 +40,26 @@ router.put("/:id", verifyTokenAndAdmin,async (req, res) => {
 
 //GET USER ORDERS
 
+/**
+ * @swagger
+ *  /{userId}:
+ *  get:
+ *    summary: asdfsadf
+ *    description: sdfsadf
+ *    parameters:
+ *          - in:path
+ *            userId: id
+ *            required: true
+ *            description: asfsdf
+ *            content:
+ *                application/json
+ *                    schema:
+ *                        type: array
+ *                        items:
+ *                          $ref: '#components/schema/shop'
+ *               
+ */
+
   router.get("/:userId", async (req, res) => {
     try {
       const orders = await Order.find({ userId: req.params.userId });
